@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ht
+" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="task-manager">
+    <!-- left bar starts -->
+    <div class="left-bar">
+      <div class="upper-part">
+        <!-- <div class="actions">
+          <div class="circle"></div>
+          <div class="circle-2"></div>
+        </div> -->
+      </div>
+
+      <!-- left content starts -->
+      <div class="left-content">
+        <ul class="action-list">
+          <li class="item">
+            <img src="images/reuniones.jpg" alt="task-image" class="task-image-menu"/>
+            <input class="nav-priority" name="nav" type="radio" id="opt-5" />
+            <label class="priority" for="opt-5">Reunións</label>
+          </li>
+          <li class="item">
+            <img src="images/web.jpg" alt="task-image" class="task-image-menu"/>
+            <input class="nav-priority" name="nav" type="radio" id="opt-6" />
+            <label class="priority" for="opt-6">Páginas web</label>
+          </li>
+          <li class="item">
+            <img src="images/aplicaciones.jpg" alt="task-image" class="task-image-menu"/>
+            <input class="nav-priority" name="nav" type="radio" id="opt-7" />
+            <label class="priority" for="opt-7">Aplicacións móbiles</label>
+          </li>
+          <li class="item">
+            <img src="images/despliegue.jpg" alt="task-image" class="task-image-menu"/>
+            <input class="nav-priority" name="nav" type="radio" id="opt-8" />
+            <label class="priority" for="opt-8">Despliegue</label>
+          </li>
+        </ul>
+      </div>
+      <!-- left content ends -->
+    </div>
+    <!-- left bar ends -->
+
+    <!-- page content starts -->
+    <div class="page-content">
+      <div class="header">
+        <div>Gestión de Tareas</div>
+        <button id="show-form-btn" class="btn-show-form">Agregar tarea</button>
+      </div>
+
+
+      <div>
+
+      </div>
+      <!-- contnet categories starts -->
+      <div class="content-categories">
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-1" />
+          <label class="category" for="opt-1">Listar todas</label>
+        </div>
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-2" checked />
+          <label class="category" for="opt-2">Alto</label>
+        </div>
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-3" />
+          <label class="category" for="opt-3">Medio</label>
+        </div>
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-4" />
+          <label class="category" for="opt-4">Bajo</label>
+        </div>
+      </div>
+      <!--  -->
+      <!-- contemt categories ends -->
+      <!-- tasks wrapper starts -->
+      <div class="tasks-wrapper">
+
+
+      </div>
+      <!-- tasks wrapper ends -->
+    </div>
+    <!--  -->
+    <!-- page content ends -->
+
+    <!-- right bar starts -->
+    <div class="right-bar">
+      <div class="top-part">
+        <img class="feather feather-users" src="svg/users.svg" alt="" />
+        <div class="count">6</div>
+      </div>
+      <div class="header">Tareas próximas a expirar:</div>
+      <div class="right-content">
+
+      </div>
+    </div>
+    <!-- right bar ends -->
+
+
+  </div>
+    <!-- Formulario para crear tarea (oculto inicialmente) -->
+    <div id="task-form-container" class="task-form" style="display: none;">
+      <!-- Cerrar formulario -->
+      <div class="close-btn" id="close-form-btn">&times;</div> 
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="task-name">Nombre de la Tarea</label>
+          <input type="text" id="task-name" name="task-name" placeholder="Escribe el nombre de la tarea" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="task-description">Descripción</label>
+          <textarea id="task-description" name="task-description" placeholder="Escribe una breve descripción" required></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="task-priority">Prioridad</label>
+          <select id="task-priority" name="task-priority" required>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="task-category">Categoría</label>
+          <select id="task-category" name="task-category" required>
+            <option value="reunion">Reunión</option>
+            <option value="dev-web">Desarrollo Página Web</option>
+            <option value="dev-app">Desarrollo Aplicación Móvil</option>
+            <option value="despliegue">Despliegue</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="task-image">Imagen de la Tarea</label>
+          <input type="file" id="task-image" name="task-image" accept="image/*" />
+        </div>
+  
+        <div class="form-group">
+          <label for="task-start-date">Fecha de Inicio</label>
+          <input type="date" id="task-start-date" name="task-start-date" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="task-end-date">Fecha de Fin</label>
+          <input type="date" id="task-end-date" name="task-end-date" required />
+        </div>
+  
+        <button type="submit" class="btn-submit btn-show-form">Guardar</button>
+      </form>
+    </div>
+    
+    <div><img src="" alt=""></div>
+
+
+    <!-- Enlace js -->
+  <script src="scriptFuncionalidad.js"></script>
+    
+</body>
+
+</html>
