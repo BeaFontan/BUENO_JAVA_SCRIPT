@@ -12,35 +12,33 @@
   <div class="task-manager">
     <!-- left bar starts -->
     <div class="left-bar">
-      <div class="upper-part">
-        <!-- <div class="actions">
-          <div class="circle"></div>
-          <div class="circle-2"></div>
-        </div> -->
-      </div>
-
       <!-- left content starts -->
       <div class="left-content">
-        <ul class="action-list">
+        <ul class="action-list">          
+          <li class="item">
+            <img src="images/home.jpg" alt="task-image" class="task-image-menu"/>
+            <input class="nav-priority" name="category-filter" type="radio" id="opt-5" />
+            <label class="priority" for="opt-5">Todas</label>
+          </li>
           <li class="item">
             <img src="images/reuniones.jpg" alt="task-image" class="task-image-menu"/>
-            <input class="nav-priority" name="category-filter" type="radio" id="opt-5" />
-            <label class="priority" for="opt-5">Reunións</label>
+            <input class="nav-priority" name="category-filter" type="radio" id="opt-6" />
+            <label class="priority" for="opt-6">Reunións</label>
           </li>
           <li class="item">
             <img src="images/web.jpg" alt="task-image" class="task-image-menu"/>
-            <input class="nav-priority" name="category-filter" type="radio" id="opt-6" />
-            <label class="priority" for="opt-6">Páginas web</label>
+            <input class="nav-priority" name="category-filter" type="radio" id="opt-7" />
+            <label class="priority" for="opt-7">Páxinas web</label>
           </li>
           <li class="item">
             <img src="images/aplicaciones.jpg" alt="task-image" class="task-image-menu"/>
-            <input class="nav-priority" name="category-filter" type="radio" id="opt-7" />
-            <label class="priority" for="opt-7">Aplicacións móbiles</label>
+            <input class="nav-priority" name="category-filter" type="radio" id="opt-8" />
+            <label class="priority" for="opt-8">Aplicacións móbiles</label>
           </li>
           <li class="item">
             <img src="images/despliegue.jpg" alt="task-image" class="task-image-menu"/>
-            <input class="nav-priority" name="category-filter" type="radio" id="opt-8" />
-            <label class="priority" for="opt-8">Despliegue</label>
+            <input class="nav-priority" name="category-filter" type="radio" id="opt-9" />
+            <label class="priority" for="opt-9">Despregue</label>
           </li>
         </ul>
       </div>
@@ -51,14 +49,10 @@
     <!-- page content starts -->
     <div class="page-content">
       <div class="header">
-        <div>Gestión de Tareas</div>
+        <div>Xestión de Tareas</div>
         <button id="show-form-btn" class="btn-show-form">Agregar tarea</button>
       </div>
 
-
-      <div>
-
-      </div>
       <!-- contnet categories starts -->
       <div class="content-categories">
         <div class="label-wrapper">
@@ -67,25 +61,24 @@
         </div>
         <div class="label-wrapper">
           <input class="nav-item" name="nav" type="radio" id="opt-2" checked />
-          <label class="category" for="opt-2">Alto</label>
+          <label class="category" for="opt-2">Alta</label>
         </div>
         <div class="label-wrapper">
           <input class="nav-item" name="nav" type="radio" id="opt-3" />
-          <label class="category" for="opt-3">Medio</label>
+          <label class="category" for="opt-3">Media</label>
         </div>
         <div class="label-wrapper">
           <input class="nav-item" name="nav" type="radio" id="opt-4" />
-          <label class="category" for="opt-4">Bajo</label>
+          <label class="category" for="opt-4">Baixa</label>
         </div>
       </div>
       <!--  -->
       <!-- contemt categories ends -->
-      <!-- tasks wrapper starts -->
+
+      <!-- Contenedor de tareas -->
       <div class="tasks-wrapper">
-
-
       </div>
-      <!-- tasks wrapper ends -->
+      <!-- Termina contenedor de tareas -->
     </div>
     <!--  -->
     <!-- page content ends -->
@@ -111,7 +104,7 @@
       <div class="close-btn" id="close-form-btn">&times;</div> 
       <form action="#" method="POST">
         <div class="form-group">
-          <label for="task-name">Nombre de la Tarea</label>
+          <label for="task-name">Nome da Tarea</label>
           <input type="text" id="task-name" name="task-name" placeholder="Escribe el nombre de la tarea" required />
         </div>
   
@@ -121,26 +114,26 @@
         </div>
   
         <div class="form-group">
-          <label for="task-priority">Prioridad</label>
+          <label for="task-priority">Prioridade</label>
           <select id="task-priority" name="task-priority" required>
             <option value="alta">Alta</option>
             <option value="media">Media</option>
-            <option value="baja">Baja</option>
+            <option value="baja">Baixa</option>
           </select>
         </div>
   
         <div class="form-group">
           <label for="task-category">Categoría</label>
           <select id="task-category" name="task-category" required>
-            <option value="reunion">Reunión</option>
-            <option value="dev-web">Desarrollo Página Web</option>
-            <option value="dev-app">Desarrollo Aplicación Móvil</option>
-            <option value="despliegue">Despliegue</option>
+            <option value="Reunións">Reunións</option>
+            <option value="Desarrollo de páxinas Web">Desarrollo Páxina Web</option>
+            <option value="Desarrollo Aplicación Móbil">Desarrollo Aplicación Móbil</option>
+            <option value="Despregamento">Despregamento</option>
           </select>
         </div>
   
         <div class="form-group">
-          <label for="task-image">Imagen de la Tarea</label>
+          <label for="task-image">Imaxe da Tarea</label>
           <input type="file" id="task-image" name="task-image" accept="image/*" />
         </div>
   
@@ -154,7 +147,7 @@
           <input type="date" id="task-end-date" name="task-end-date" required />
         </div>
   
-        <button type="submit" class="btn-submit btn-show-form">Guardar</button>
+        <button type="submit" class="btn-submit btn-show-form">Gardar</button>
       </form>
     </div>
     
