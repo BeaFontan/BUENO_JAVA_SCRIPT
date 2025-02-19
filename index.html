@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-<html lang="ht
-" dir="ltr">
+<html lang="ht" dir="ltr">
+<!-- Se define el documento HTML con lenguaje haitiano ("ht") y dirección de texto de izquierda a derecha -->
 
 <head>
   <meta charset="utf-8">
+  <!-- Define el juego de caracteres a UTF-8 para soportar múltiples idiomas -->
   <title>Gestor de Tareas</title>
+  <!-- Título que se mostrará en la pestaña del navegador -->
   <link rel="stylesheet" href="style.css">
+  <!-- Vincula la hoja de estilos externa para el diseño de la página -->
 </head>
 
 <body>
+  <!-- Contenedor principal del gestor de tareas -->
   <div class="task-manager">
-    <!-- left bar starts -->
+    <!-- Barra lateral izquierda -->
     <div class="left-bar">
-      <!-- left content starts -->
+      <!-- Contenido de la barra izquierda -->
       <div class="left-content">
+        <!-- Lista de acciones o filtros por categoría -->
         <ul class="action-list">          
+          <!-- Elemento para mostrar todas las tareas -->
           <li class="item">
             <img src="images/home.jpg" alt="task-image" class="task-image-menu"/>
             <input class="nav-priority" name="category-filter" type="radio" id="opt-5" />
             <label class="priority" for="opt-5">Todas</label>
           </li>
+          <!-- Elemento para filtrar tareas por 'Reunións' -->
           <li class="item">
             <img src="images/reuniones.jpg" alt="task-image" class="task-image-menu"/>
             <input class="nav-priority" name="category-filter" type="radio" id="opt-6" />
             <label class="priority" for="opt-6">Reunións</label>
           </li>
+          <!-- Elemento para filtrar tareas por 'Páxinas web' -->
           <li class="item">
             <img src="images/web.jpg" alt="task-image" class="task-image-menu"/>
             <input class="nav-priority" name="category-filter" type="radio" id="opt-7" />
             <label class="priority" for="opt-7">Páxinas web</label>
           </li>
+          <!-- Elemento para filtrar tareas por 'Aplicacións móbiles' -->
           <li class="item">
             <img src="images/aplicaciones.jpg" alt="task-image" class="task-image-menu"/>
             <input class="nav-priority" name="category-filter" type="radio" id="opt-8" />
             <label class="priority" for="opt-8">Aplicacións móbiles</label>
           </li>
+          <!-- Elemento para filtrar tareas por 'Despregue' -->
           <li class="item">
             <img src="images/despliegue.jpg" alt="task-image" class="task-image-menu"/>
             <input class="nav-priority" name="category-filter" type="radio" id="opt-9" />
@@ -42,19 +52,22 @@
           </li>
         </ul>
       </div>
-      <!-- left content ends -->
+      <!-- Fin del contenido izquierdo -->
     </div>
-    <!-- left bar ends -->
+    <!-- Fin de la barra lateral izquierda -->
 
-    <!-- page content starts -->
+    <!-- Contenido principal de la página -->
     <div class="page-content">
+      <!-- Encabezado de la página -->
       <div class="header">
         <div>Xestión de Tareas</div>
+        <!-- Botón para mostrar el formulario y agregar una nueva tarea -->
         <button id="show-form-btn" class="btn-show-form">Agregar tarea</button>
       </div>
 
-      <!-- contnet categories starts -->
+      <!-- Sección de categorías en la parte superior del contenido -->
       <div class="content-categories">
+        <!-- Cada 'label-wrapper' contiene un input radio y su correspondiente etiqueta para filtrar tareas por prioridad -->
         <div class="label-wrapper">
           <input class="nav-item" name="nav" type="radio" id="opt-1" />
           <label class="category" for="opt-1">Listar todas</label>
@@ -72,89 +85,99 @@
           <label class="category" for="opt-4">Baixa</label>
         </div>
       </div>
-      <!--  -->
-      <!-- contemt categories ends -->
+      <!-- Fin de la sección de categorías -->
 
-      <!-- Contenedor de tareas -->
+      <!-- Contenedor donde se mostrarán las tareas -->
       <div class="tasks-wrapper">
       </div>
-      <!-- Termina contenedor de tareas -->
+      <!-- Fin del contenedor de tareas -->
     </div>
-    <!--  -->
-    <!-- page content ends -->
+    <!-- Fin del contenido principal de la página -->
 
-    <!-- right bar starts -->
+    <!-- Barra lateral derecha -->
     <div class="right-bar">
+      <!-- Parte superior de la barra derecha que muestra un ícono y el contador de tareas -->
       <div class="top-part">
         <img class="feather feather-users" src="svg/users.svg" alt="" />
+        <!-- Contador de tareas -->
         <div class="count">6</div>
       </div>
+      <!-- Encabezado para la sección de tareas próximas a expirar -->
       <div class="header">Tareas próximas a expirar:</div>
+      <!-- Contenedor para mostrar las tareas que están próximas a expirar -->
       <div class="right-content">
-
       </div>
     </div>
-    <!-- right bar ends -->
-
-
+    <!-- Fin de la barra lateral derecha -->
   </div>
-    <!-- Formulario para crear tarea (oculto inicialmente) -->
-    <div id="task-form-container" class="task-form" style="display: none;">
-      <!-- Cerrar formulario -->
-      <div class="close-btn" id="close-form-btn">&times;</div> 
-      <form action="#" method="POST">
-        <div class="form-group">
-          <label for="task-name">Nome da Tarea</label>
-          <input type="text" id="task-name" name="task-name" placeholder="Escribe el nombre de la tarea" required />
-        </div>
+  <!-- Fin del contenedor principal del gestor de tareas -->
+
+  <!-- Formulario para crear o editar una tarea (oculto inicialmente) -->
+  <div id="task-form-container" class="task-form" style="display: none;">
+    <!-- Botón para cerrar el formulario -->
+    <div class="close-btn" id="close-form-btn">&times;</div> 
+    <!-- Formulario para la creación/edición de tareas -->
+    <form action="#" method="POST">
+      <!-- Campo para el nombre de la tarea -->
+      <div class="form-group">
+        <label for="task-name">Nome da Tarea</label>
+        <input type="text" id="task-name" name="task-name" placeholder="Escribe el nombre de la tarea" required />
+      </div>
   
-        <div class="form-group">
-          <label for="task-description">Descripción</label>
-          <textarea id="task-description" name="task-description" placeholder="Escribe una breve descripción" required></textarea>
-        </div>
+      <!-- Campo para la descripción de la tarea -->
+      <div class="form-group">
+        <label for="task-description">Descripción</label>
+        <textarea id="task-description" name="task-description" placeholder="Escribe una breve descripción" required></textarea>
+      </div>
   
-        <div class="form-group">
-          <label for="task-priority">Prioridade</label>
-          <select id="task-priority" name="task-priority" required>
-            <option value="alta">Alta</option>
-            <option value="media">Media</option>
-            <option value="baja">Baixa</option>
-          </select>
-        </div>
+      <!-- Campo para seleccionar la prioridad de la tarea -->
+      <div class="form-group">
+        <label for="task-priority">Prioridade</label>
+        <select id="task-priority" name="task-priority" required>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baixa</option>
+        </select>
+      </div>
   
-        <div class="form-group">
-          <label for="task-category">Categoría</label>
-          <select id="task-category" name="task-category" required>
-            <option value="Reunións">Reunións</option>
-            <option value="Desarrollo de páxinas Web">Desarrollo Páxina Web</option>
-            <option value="Desarrollo Aplicación Móbil">Desarrollo Aplicación Móbil</option>
-            <option value="Despregamento">Despregamento</option>
-          </select>
-        </div>
+      <!-- Campo para seleccionar la categoría de la tarea -->
+      <div class="form-group">
+        <label for="task-category">Categoría</label>
+        <select id="task-category" name="task-category" required>
+          <option value="Reunións">Reunións</option>
+          <option value="Desarrollo de páxinas Web">Desarrollo Páxina Web</option>
+          <option value="Desarrollo Aplicación Móbil">Desarrollo Aplicación Móbil</option>
+          <option value="Despregamento">Despregamento</option>
+        </select>
+      </div>
   
-        <div class="form-group">
-          <label for="task-image">Imaxe da Tarea</label>
-          <input type="file" id="task-image" name="task-image" accept="image/*" />
-        </div>
+      <!-- Campo para subir una imagen asociada a la tarea -->
+      <div class="form-group">
+        <label for="task-image">Imaxe da Tarea</label>
+        <input type="file" id="task-image" name="task-image" accept="image/*" />
+      </div>
   
-        <div class="form-group">
-          <label for="task-start-date">Fecha de Inicio</label>
-          <input type="date" id="task-start-date" name="task-start-date" required />
-        </div>
+      <!-- Campo para seleccionar la fecha de inicio de la tarea -->
+      <div class="form-group">
+        <label for="task-start-date">Fecha de Inicio</label>
+        <input type="date" id="task-start-date" name="task-start-date" required />
+      </div>
   
-        <div class="form-group">
-          <label for="task-end-date">Fecha de Fin</label>
-          <input type="date" id="task-end-date" name="task-end-date" required />
-        </div>
+      <!-- Campo para seleccionar la fecha de fin de la tarea -->
+      <div class="form-group">
+        <label for="task-end-date">Fecha de Fin</label>
+        <input type="date" id="task-end-date" name="task-end-date" required />
+      </div>
   
-        <button type="submit" class="btn-submit btn-show-form">Gardar</button>
-      </form>
-    </div>
+      <!-- Botón para enviar el formulario y guardar la tarea -->
+      <button type="submit" class="btn-submit btn-show-form">Gardar</button>
+    </form>
+  </div>
     
-    <div><img src="" alt=""></div>
+  <!-- Imagen adicional (vacía, posiblemente para futuros elementos o estilos) -->
+  <div><img src="" alt=""></div>
 
-
-    <!-- Enlace js -->
+  <!-- Inclusión del archivo JavaScript que contiene la funcionalidad del gestor de tareas -->
   <script src="scriptFuncionalidad.js"></script>
     
 </body>
