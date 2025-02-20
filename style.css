@@ -357,18 +357,6 @@ label .label-text:before {
   background-color: var(--box-color-4);
 }
 
-.more-button {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: #8e92a4;
-  cursor: pointer;
-  padding: 5px;
-}
-
 .menu-options {
   position: absolute;
   background: white;
@@ -738,7 +726,7 @@ form{
   border: none;
   font-size: 18px;
   cursor: pointer;
-  margin-left: auto;
+  margin-bottom: 100px;
 }
 
 .more-button:hover {
@@ -810,6 +798,28 @@ form{
   color: #dc3545;
   margin-right: 5px;
 }
+
+/* Estilos para tareas vencidas */
+.expired-task {
+  background-color: #f0f0f0;  /* Fondo gris suave */
+  opacity: 0.7; /* Reduce la opacidad para mostrar que está vencida */
+  text-decoration: line-through; /* Texto tachado */
+  color: #888; /* Color de texto más tenue */
+  transition: all 0.3s ease-in-out;
+  border-left: 5px solid #d9534f; /* Borde rojo para indicar que está vencida */
+}
+
+/* Agrega un efecto de hover para que se vea moderno */
+.expired-task:hover {
+  opacity: 1;
+  background-color: #e0e0e0;
+}
+
+/* Si la tarea tiene imagen, también se verá desaturada */
+.expired-task .task-image {
+  filter: grayscale(100%);
+}
+
 
 
 /* Estilos responsivos para móviles */
