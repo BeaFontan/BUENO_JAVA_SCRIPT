@@ -1,5 +1,6 @@
 // Ejecutamos el código una vez que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
+  // Referencias a los elementos del DOM que se van a manipular
   const form = document.querySelector("#task-form-container form");
   const taskWrapper = document.querySelector(".tasks-wrapper");
   const showFormBtn = document.querySelector("#show-form-btn");
@@ -7,34 +8,51 @@ document.addEventListener("DOMContentLoaded", function () {
   const formContainer = document.querySelector("#task-form-container");
   const rightContent = document.querySelector(".right-content");
 
+  // Grupo de filtros de prioridad (en la sección de categorías, a la derecha)
   const priorityFilters = document.querySelectorAll("input[name='nav']");
+  // Grupo de filtros de categoría (en la barra izquierda)
   const categoryFilters = document.querySelectorAll("input[name='category-filter']");
+  
+  // Input para cargar la imagen de la tarea
   const taskImageInput = document.querySelector("#task-image");
 
+  // Se obtienen las tareas almacenadas en localStorage; si no hay, se inicializa un array vacío
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+   // Variable para almacenar el filtro de prioridad seleccionado. Valores posibles: "all", "alta", "media", "baja"
   let currentFilter = "all";
+  // Variable para almacenar el filtro de categoría seleccionado. Valores posibles: "all", "Reunións", etc.
   let currentCategoryFilter = "all";
+  // Índice de la tarea que se está editando; null indica que no se está editando ninguna tarea
   let editIndex = null;
 
+  // Por defecto se marca el primer filtro (Listar todas las tareas)
   document.querySelector("input[name='nav'][id='opt-1']").checked = true;
 
-  // Filtros de prioridad
+
+
+  // ----- Filtro de Prioridad -----
+  // Se añade un event listener a cada input del grupo de filtros de prioridad
   priorityFilters.forEach(filter => {
     filter.addEventListener("change", function () {
+      // Dependiendo del id seleccionado, se actualiza el filtro actual
       switch (this.id) {
         case "opt-1": currentFilter = "all"; break;
         case "opt-2": currentFilter = "alta"; break;
         case "opt-3": currentFilter = "media"; break;
         case "opt-4": currentFilter = "baja"; break;
       }
+      // Se actualiza la visualización de las tareas aplicando el filtro de prioridad
       updateTasksDisplay();
     });
   });
 
-  // Filtros de categoría
+  // ----- Filtro de Categoría -----
+  // Se añade un event listener a cada input del grupo de filtros de categoría
   categoryFilters.forEach(filter => {
     filter.addEventListener("change", function () {
+      // Se obtiene el texto del label adyacente y se limpia de espacios en blanco
       const selectedLabel = this.nextElementSibling.textContent.trim();
+      // Se actualiza el filtro de categoría según el texto seleccionado
       switch (selectedLabel) {
         case "Todas": currentCategoryFilter = "all"; break;
         case "Reunións": currentCategoryFilter = "Reunións"; break;
@@ -43,15 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
         case "Despregue": currentCategoryFilter = "Despregamento"; break;
         default: currentCategoryFilter = "all";
       }
+      // Se actualiza la visualización de las tareas aplicando el filtro de categoría
       updateTasksDisplay();
     });
   });
 
-  // Mostrar formulario
+  // Manejador para mostrar el formulario (al hacer clic en el botón de mostrar formulario)
   showFormBtn.addEventListener("click", () => {
-    editIndex = null;
-    form.reset();
-    formContainer.style.display = "block";
+    editIndex = null; // Se resetea el índice de edición
+    form.reset();     // Se reinician los campos del formulario
+    formContainer.style.display = "block"; // Se muestra el contenedor del formulario
   });
 
   // Cerrar formulario
