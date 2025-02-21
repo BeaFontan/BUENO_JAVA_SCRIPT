@@ -209,6 +209,17 @@ document.addEventListener("DOMContentLoaded", function () {
         formContainer.style.display = "block";
       });
     });
+
+    let expiringTasks = [...tasks].sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
+    expiringTasks.forEach(task => {
+      const taskCard = document.createElement("div");
+      taskCard.classList.add("task-card", task.priorityClass);
+      taskCard.innerHTML = `
+        <div class="task-name">${task.name}</div>
+        <div class="task-time">Expira: ${task.endDate}</div>
+      `;
+      rightContent.appendChild(taskCard);
+    });
   }
 
   function activateDeleteTask() {
